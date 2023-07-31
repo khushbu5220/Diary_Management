@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8cc32150-d8e8-4f78-ba17-8f103030a9b4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="file_no" class="java.lang.String"/>
+	<parameter name="recieved_from" class="java.lang.String"/>
+	<parameter name="subject" class="java.lang.String"/>
+	<parameter name="reference_no" class="java.lang.String"/>
+	<parameter name="recieved_date" class="java.lang.String"/>
+	<parameter name="send_to_designation" class="java.lang.String"/>
+	<parameter name="send_to_division" class="java.lang.String"/>
+	<parameter name="file_date" class="java.lang.String"/>
+	<parameter name="remarks" class="java.lang.String"/>
+	<parameter name="cdt" class="java.lang.String"/>
+	<parameter name="FileMovementHistory" class="java.lang.String"/>
+	<variable name="count" class="java.lang.Number" resetType="Column" incrementType="Column" calculation="Count"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="18" y="12" width="128" height="67" uuid="3d0d6221-a7c1-4f8e-acdf-6559eeabdfa5"/>
+				<imageExpression><![CDATA["E:\\csirCopy\\img\\CSIR-Logo-With-Tagline-Seleceted-Bilingual-01.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="146" y="24" width="267" height="20" uuid="2dd37acd-2a1a-4085-93c2-d715019f5283"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNCIL OF SCIENTIFIC AND INDUSTRIAL RESEARCH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="44" width="356" height="20" uuid="7b4f1451-ecb1-4f55-a975-01e003ac62cc"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MINISTRY OF SCIENCE AND TECHNOLOGY, GOVT. OF INDIA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="100" height="20" uuid="3f111b63-9e4b-4491-99a9-d396e41bb1a8"/>
+				<text><![CDATA[File No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="100" height="20" uuid="326d6a75-6a5c-4dad-878f-b108b96258f3"/>
+				<text><![CDATA[Recieved From]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="65" width="100" height="20" uuid="f6e23cd3-9fca-4a18-8514-42851f48a01a"/>
+				<text><![CDATA[Subject]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="85" width="100" height="20" uuid="4cc256ca-ef90-4eb2-885b-1036b3b2460b"/>
+				<text><![CDATA[Send To Division]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="45" width="100" height="20" uuid="2e426fe9-abf0-4856-b2cc-75847060d8ab"/>
+				<text><![CDATA[Recieved Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="25" width="100" height="20" uuid="ee0ee946-baf2-485b-8d17-afb61b13c25b"/>
+				<text><![CDATA[Reference No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="85" width="100" height="20" uuid="29d27058-2b2e-4b47-ae05-72de68ca1987"/>
+				<text><![CDATA[Send To Designation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="65" width="100" height="20" uuid="6499bed4-dbe5-4c06-8124-1839ddc265aa"/>
+				<text><![CDATA[File Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="105" width="100" height="20" uuid="5c91ffa7-7e31-43b4-8f9a-0cac95899bf8"/>
+				<text><![CDATA[CDT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="105" width="100" height="20" uuid="01af47eb-f70d-4129-993f-d7cc04dd88d2"/>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="25" width="10" height="20" uuid="b35e06aa-4899-45bb-92b0-855cea866f7f"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="45" width="10" height="20" uuid="ff4bc604-ac6d-4bda-b377-2f9482337425"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="45" width="10" height="20" uuid="21af8849-73b0-4090-84bc-df9cdbf29f12"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="65" width="10" height="20" uuid="a78be25e-c15d-4fcf-9661-fb7f8da8af8d"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="85" width="10" height="20" uuid="b6a65300-67a7-4ab1-9358-3b0a858062b8"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="105" width="10" height="20" uuid="983bd48a-2ede-4171-9069-8420219c9eed"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="65" width="10" height="20" uuid="feec0815-c57c-4158-8b92-3f4265385a3f"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="25" width="10" height="20" uuid="e0956526-6de9-43b4-96ea-56e84bed9ed8"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="85" width="10" height="20" uuid="efaa7a4c-bfd7-463c-ab94-195ed232a9fc"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="105" width="10" height="20" uuid="760b6d16-95b7-4607-ade5-26223660820f"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="25" width="137" height="20" uuid="8258f9f8-f79e-484f-b9ef-958d3b4cc2b3"/>
+				<textElement>
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{file_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="45" width="137" height="20" uuid="c323cbf9-33c9-49ae-bb6c-e5baa7213ba3"/>
+				<textElement>
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{recieved_from}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="65" width="137" height="20" uuid="4e2de665-31eb-4eba-813c-0d141e3277d6"/>
+				<textElement>
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{subject}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="373" y="25" width="146" height="20" isPrintWhenDetailOverflows="true" uuid="6db33b52-7434-43fc-a4e0-330023d11e3b"/>
+				<textFieldExpression><![CDATA[$P{reference_no}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="373" y="45" width="146" height="20" isPrintWhenDetailOverflows="true" uuid="97993734-80d0-4d53-b863-5da05e464072"/>
+				<textFieldExpression><![CDATA[$P{recieved_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="85" width="137" height="20" uuid="d56908db-eb26-4956-b725-82e9af835866"/>
+				<textElement>
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{send_to_designation}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="373" y="85" width="146" height="20" isPrintWhenDetailOverflows="true" uuid="dcc53c40-980f-4647-891f-298284012768"/>
+				<textFieldExpression><![CDATA[$P{send_to_division}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="373" y="65" width="146" height="20" isPrintWhenDetailOverflows="true" uuid="0f9a4a30-76a1-47e8-ab46-79a30d4a9199"/>
+				<textFieldExpression><![CDATA[$P{file_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="110" y="105" width="137" height="20" uuid="0618d2ba-b8ae-46f6-9541-b3ae4d7c477f"/>
+				<textElement>
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{remarks}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="373" y="105" width="146" height="20" isPrintWhenDetailOverflows="true" uuid="6cbb4b31-dab5-4cc8-b7a8-c9c9897ed34a"/>
+				<textFieldExpression><![CDATA[$P{cdt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="42" height="20" forecolor="#FFFFFF" backcolor="#0000CC" uuid="3aba4629-61cf-4890-b094-b55bede7b667"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S. No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="207" y="0" width="124" height="20" forecolor="#FFFFFF" backcolor="#0000CC" uuid="defaf472-46af-44ca-8644-0202df300b47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Send To Division]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="119" y="0" width="88" height="20" forecolor="#FFFFFF" backcolor="#0000CC" uuid="e51c7662-2453-4a7b-8089-9a5e58887b99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Send Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="331" y="0" width="136" height="20" forecolor="#FFFFFF" backcolor="#0000CC" uuid="546bf3fa-8219-4870-83ea-3c8c6fde3bdc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="42" y="0" width="77" height="20" forecolor="#FFFFFF" backcolor="#0000CC" uuid="af7d276d-cb82-40cb-803f-701a7fad061c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recieved Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="467" y="0" width="88" height="20" forecolor="#FFFFFF" backcolor="#0000CC" uuid="71d87b5e-3b12-4f0a-a501-67a210984102"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CDT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="42" y="0" width="77" height="20" isPrintWhenDetailOverflows="true" uuid="76cb6111-82b7-4090-95eb-58190e2539e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FileMovementHistory}.getReceived_date()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="119" y="0" width="87" height="20" isPrintWhenDetailOverflows="true" uuid="a557c61a-3c93-4853-9eca-b9e65742b00f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FileMovementHistory}.getSend_date()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="330" y="0" width="132" height="20" isPrintWhenDetailOverflows="true" uuid="7d7087cb-67ab-488e-a097-11214d5c419e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FileMovementHistory}.getRemarks()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="206" y="0" width="124" height="20" isPrintWhenDetailOverflows="true" uuid="b373b974-4f5d-4427-b54a-3d8b193a3d93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FileMovementHistory}.getSend_to_division()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="462" y="0" width="93" height="20" isPrintWhenDetailOverflows="true" uuid="41148631-eaae-4ea7-ba57-2c0bcb7c0d13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FileMovementHistory}.getCdt()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="42" height="20" uuid="1e626174-0206-465c-8d8d-823e228dcb23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{count}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="536" y="10" width="19" height="20" uuid="c1fd2808-16b4-4e8a-be68-3e564b7e9e7a"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="555" height="20" uuid="89dacb0b-505d-41e0-a171-9220391d5c4f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[---- The end of the File Diary Report ----]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
