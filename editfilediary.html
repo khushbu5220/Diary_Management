@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+      <script src="./js/index.js"></script>
+    </head>
+    <!-- Main container -->
+<div class="page-container">
+    
+  <!-- bloc-0 -->
+  <div class="bloc none full-width-bloc l-bloc " id="bloc-0">
+    <div class="container bloc-lg bloc-sm-lg">
+      <div class="row">
+        <div class="col-12 col-md-2 col-lg-2 heading">
+          <a target="_blank"><img style="height: 110px;" src="img/CSIR-Logo-With-Tagline-Seleceted-Bilingual-01.png" class="img-fluid float-lg-none" alt="CSIR Logo-With-Tagline-Seleceted-Bilingual-01" /></a>
+        </div>
+        <div class="col-12 offset-lg--1 col-lg-8 col-md-8 heading" id="heading">
+          <h5 class="text-lg-center tc-black text-md-center">
+            वैज्ञानिक तथा औद्योगिक अनुसंधान परिषद्</h5>
+            <h5 class="text-lg-center tc-black text-md-center">
+            Council of Scientific and Industrial Research</h5>
+            <h5 class="text-lg-center tc-black text-md-center" id="heading2">
+            विज्ञान और प्रौद्योगिकी मंत्रालय</h5>
+            <h5 class="text-lg-center tc-black text-md-center" id="heading2">
+            Ministry of Science and Technology, Govt. of India</h5>
+        </div>
+        <div class="col-12 col-lg-2 col-md-2 heading">
+          <a target="_blank"><img  src="img/G20%20theme%20and%20logo.png" class="img-fluid img-style float-lg-right" alt="G20%20theme%20and%20logo" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bloc-0 END -->
+  
+  <!-- Header start -->
+  <nav style="height: 35px;">
+      <div class="nav-adj"></div>
+      <ul class="navbar" id="navbar"></ul>
+    </nav>
+  <!-- bloc-0 END -->
+    <body class="loginpage">
+        <div id="loading"></div>
+
+
+    
+    <!-- <h2 class="user-record-title">Edit File Diary</h2> -->
+    
+    <div class="container mt-3">
+      <div class="form-header-bg">
+        <h2 class="form-header">Edit File Diary</h2>
+      </div>
+        <div><span id="messageReponse"></span></div>
+      <form> 
+        <div class="row user-form">
+
+        
+
+             <div class="row user-form">
+                <div class="col-sm-6 user-record-form">
+               <label class="form-label">New File Number</label>
+                  <input type="text" id="newFileNo" class="form-control" placeholder="Enter your New File Number">
+                </div>
+                <div class="col-sm-6 user-record-form">
+                      <label class="form-label">Received From</label>
+                  <select id="recievedFrom" class="form-select"></select>
+                </div>
+              </div>
+    
+              <div class="row user-form">
+                <div class="col-sm-6 user-record-form">
+               <label class="form-label">Reference Number</label>
+                  <input type="text" id="referenceNo" class="form-control" placeholder="Enter your Reference Number">
+                </div>
+                <div class="col-sm-6 user-record-form">
+                      <label class="form-label">Subject</label>
+                  <input type="text" id="subject" class="form-control" placeholder="Enter your Subject">
+                </div>
+              </div>
+
+              <div class="row user-form">
+                <div class="col-sm-6 user-record-form">
+               <label class="form-label">Received Date</label>
+                  <input type="date" id="recievedDate" class="form-control" placeholder="Enter your Received Date">
+                </div>
+                <div class="col-sm-6 user-record-form">
+                  <label class="form-label">Send To</label>
+                  <select class="form-select" id="designationdd">
+                    </select>
+                </div>
+              </div>
+
+              <div class="row user-form">
+                <div class="col-sm-6 user-record-form">
+               </div>
+                <div class="col-sm-6 user-record-form">  
+                    <label class="form-label"></label>               
+                    <select class="form-select" id="divisiondd">
+                      
+                    </select>
+                </div>
+              </div>
+
+
+              <div class="row user-form">
+                <div class="col-sm-6 user-record-form">
+               <label class="form-label">File Date</label>
+                  <input type="date" id="sendDate" class="form-control" placeholder="Enter your Send Date">
+                </div>
+                <div class="col-sm-6 user-record-form">
+                      <label class="form-label">Remark</label>
+                  <input type="text" id="remark" class="form-control" placeholder="Enter your Remark">
+                </div>
+              </div>
+
+              <div class="container">
+            
+                <div class="button-container">
+                  <button type="button" onclick="Edit()" class="btn btn-primary">Update</button>           
+                  <button type="button" class="btn btn-primary" onclick="history.go(-1)">Cancel</button>
+                </div>
+              </div>
+
+              <!-- <h2 class="user-record-title">Editable</h2> -->
+
+
+
+
+              
+      
+      
+        </div>
+
+    
+      </form>
+    </div>
+<script>
+      
+      let req = new XMLHttpRequest();
+	req.open("GET", "http://localhost:8080/ViewFileDiaryEntry/"+sessionStorage.getItem("Id"));
+    req.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("token"));
+    req.setRequestHeader('Access-Control-Allow-Origin', "*");
+    req.send();
+    req.onload = () =>
+	{
+		console.log(req);
+		if(req.status == 200)
+		{
+			const jsonData = JSON.parse(req.response);
+			console.log(jsonData);
+            // var formatRecievedDate = new Date(jsonData.received_date);
+            // var formatFileDate = Date.parse(jsonData.file_date);
+            const fileData = jsonData.filediary;
+			      document.getElementById("newFileNo").value = fileData.file_no;
+            document.getElementById("referenceNo").value = fileData.reference_no;
+            document.getElementById("recievedFrom").value = fileData.received_from;
+            document.getElementById("subject").value = fileData.subject;
+            document.getElementById("recievedDate").value = fileData.received_date;
+            // const myArray = fileData.cdt.split("T");
+            //     console.log(myArray[0]+"|"+myArray[1])
+            // document.getElementById("sendDate").value = myArray[0];
+            document.getElementById("sendDate").value = fileData.file_date;
+            document.getElementById("designationdd").value = fileData.send_to_designation;
+            document.getElementById("divisiondd").value = fileData.send_to_division;
+            document.getElementById("remark").value = fileData.remarks;
+        }
+    }
+
+  async function Edit()
+  {
+    console.log("************")
+    event.preventDefault()
+    const newFileNo = document.getElementById("newFileNo").value;
+    const referenceNo = document.getElementById("referenceNo").value;
+    const recievedFrom = document.getElementById("recievedFrom").value;
+    const subject = document.getElementById("subject").value;
+    const recievedDate = document.getElementById("recievedDate").value;
+    const fileDate = document.getElementById("sendDate").value;
+    const designationdd = document.getElementById("designationdd").value;
+    const divisiondd = document.getElementById("divisiondd").value;
+    const remark = document.getElementById("remark").value;
+
+    const messageReponse = document.getElementById("messageReponse");
+
+    // var formatRecievedDate = new Date(recievedDate);
+    // var formatFileDate = new Date(fileDate);
+    // console.log("entry: "+JSON.parse([entry]))
+    // entryJSON = JSON.parse(entry.slice(0, entry.length - 1));
+    // console.log("entryJSON1: "+entryJSON)
+    var xhr = new XMLHttpRequest();
+    xhr.open('PUT', 'http://localhost:8080/editFileDiaryEntry/'+sessionStorage.getItem("Id"), true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("token"));
+    xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === XMLHttpRequest.DONE) {
+            if(xhr.status === 200) {
+                let reponse = xhr.responseText;
+                const myArray = reponse.split("|");
+                console.log(myArray[0]+"|"+myArray[1])
+                if(myArray[0] == "200")
+                {
+                  messageReponse.textContent = myArray[1];
+                  messageReponse.style.color = "green"; 
+                  window.location = "fileListPage.html";
+                }
+                else
+                {
+                  messageReponse.textContent = '* '+myArray[1];
+                  messageReponse.style.color = "red"; 
+                }
+            }
+            else {
+                document.getElementById("messageReponse").innerHTML = "Something went wrong, please try after sometime";
+                console.error(xhr.responseText);
+            }
+        }
+    };
+
+var data = {
+    id: sessionStorage.getItem("Id"),
+    file_no: newFileNo,
+	received_from: recievedFrom,
+    reference_no: referenceNo,
+	file_date: fileDate,
+	subject: subject,
+	received_date: recievedDate,
+	send_to_designation: designationdd,
+  send_to_division: divisiondd,
+	remarks: remark,
+};
+
+xhr.send(JSON.stringify(data))
+
+  }
+</script>
+    
+    </body>
+    </html>
+    

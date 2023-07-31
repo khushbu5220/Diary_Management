@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+      <script src="./js/index.js"></script>
+    </head>
+    <body class="loginpage">
+      <div id="loading"></div>
+    
+      <!-- Main container -->
+<div class="page-container">
+    
+  <!-- bloc-0 -->
+  
+    <!-- bloc-0 -->
+    <div class="bloc none full-width-bloc l-bloc " id="bloc-0">
+      <div class="container bloc-lg bloc-sm-lg">
+        <div class="row">
+          <div class="col-12 col-md-2 col-lg-2 heading">
+            <a target="_blank"><img style="height: 110px;" src="img/CSIR-Logo-With-Tagline-Seleceted-Bilingual-01.png" class="img-fluid float-lg-none" alt="CSIR Logo-With-Tagline-Seleceted-Bilingual-01" /></a>
+          </div>
+          <div class="col-12 offset-lg--1 col-lg-8 col-md-8 heading" id="heading">
+            <h5 class="text-lg-center tc-black text-md-center">
+              वैज्ञानिक तथा औद्योगिक अनुसंधान परिषद्</h5>
+              <h5 class="text-lg-center tc-black text-md-center">
+              Council of Scientific and Industrial Research</h5>
+              <h5 class="text-lg-center tc-black text-md-center" id="heading2">
+              विज्ञान और प्रौद्योगिकी मंत्रालय</h5>
+              <h5 class="text-lg-center tc-black text-md-center" id="heading2">
+              Ministry of Science and Technology, Govt. of India</h5>
+          </div>
+          <div class="col-12 col-lg-2 col-md-2 heading">
+            <a target="_blank"><img  src="img/G20%20theme%20and%20logo.png" class="img-fluid img-style float-lg-right" alt="G20%20theme%20and%20logo" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bloc-0 END -->
+    
+    <!-- Header start -->
+    <nav style="height: 35px;">
+        <div class="nav-adj"></div>
+        <ul class="navbar" id="navbar">
+        </ul>
+      </nav>
+    <!-- bloc-0 END -->
+  <!-- bloc-0 END -->
+    
+    <div class="container mt-3">
+      <div class="form-header-bg">
+        <h2 class="form-header">View Letter Diary</h2>
+    </div>
+      <div><span id="messageReponse"></span></div>
+      <div style="display: none;"><input disabled id="id"></div>
+      <form>
+        <div><span id="messageReponse" ></span></div>
+        <div class="row user-form">
+          <div class="col-sm-6 user-record-form">
+         <label class="form-label">New Letter Number</label>
+            <input type="text" disabled id="newletter_no" class="form-control" placeholder="Enter your New Letter Number">
+          </div>
+          <div class="col-sm-6 user-record-form">
+                <label class="form-label">Received From</label>
+                <input type="text" disabled id="recievedFrom" class="form-control" placeholder="Enter your New Letter Number">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 user-record-form">
+         <label class="form-label">Reference Number</label>
+         <input type="text" id="reference_no" disabled class="form-control" placeholder="Enter your Reference Number">
+          </div>
+          <div class="col-sm-6 user-record-form">
+                <label class="form-label">Subject</label>
+            <input type="text" id="subject" disabled class="form-control" placeholder="Enter your Subject">
+          </div>
+        </div>
+        <div class="row user-form">
+            <div class="col-sm-6 user-record-form">
+           <label class="form-label">Received Date</label>
+              <input type="date" id="recieved_date" disabled class="form-control" placeholder="Enter your Received Date">
+            </div>
+             <div class="col-sm-6 user-record-form delivary-mode" >
+                  <label class="form-label">Letter Date</label>
+                  <input type="Date" id="letter_date" disabled class="form-control" placeholder="Enter your Letter Date">
+            </div>
+          </div>
+
+          <div class="row user-form">
+            <div class="col-sm-6 user-record-form">
+           <label class="form-label">Send Date</label>
+              <input type="date" id="send_date" disabled class="form-control" placeholder="Enter your Send Date">
+            </div>
+            <div class="col-sm-6 user-record-form">
+                <label class="form-label">Send To</label>
+                <input class="form-control" disabled id="designation">   
+            </div>
+          </div>
+
+          <div class="row user-form">
+            <div class="col-sm-6 user-record-form">
+           
+            </div>
+            <div class="col-sm-6 user-record-form">
+                <label class="form-label"></label>
+                  <input class="form-control" disabled id="division">                       
+                
+            </div>
+          </div>
+
+          <div class="row user-form">
+            <div class="col-sm-6 user-record-form">
+           <label class="form-label">Diary Date</label>
+           <input type="date" id="dairy_date" disabled class="form-control" placeholder="Enter your Diary Date">
+              
+           </div>
+            <div class="col-sm-6 user-record-form">
+            <label class="form-label">Form of Communication</label>
+            <input type="text" id="formof_communicaition" disabled class="form-control" placeholder="Enter your Form of Communication">
+
+            </div>
+          </div>
+          <div class="row user-form">
+            <div class="col-sm-6 user-record-form">
+           <label class="form-label">Language</label>
+           <input type="text" id="language" disabled class="form-control" placeholder="Enter your Form of Communication">
+            </div>
+            <div class="col-sm-6 user-record-form">
+                  <label class="form-label">Remark</label>
+              <input type="text" id="remarks" disabled class="form-control" placeholder="Enter your Remark">
+            </div>
+          </div>
+
+          <div class="row user-form">
+            <div class="col-sm-6 user-record-form">
+           <label class="form-label">VIP</label>
+           <input type="text" id="vip-dd" disabled class="form-control" placeholder="Enter your Remark">
+            </div>
+          </div>
+
+              <div class="container mt-3">
+                <div class="form-header-bg">
+                  <h2 class="form-header">Contact Details</h2>
+              </div>
+                <form>
+                  <div class="row user-form">
+                      <div class="col-sm-6 user-record-form">
+                     <label class="form-label">Name</label>
+                        <input type="text" disabled id="name" class="form-control" placeholder="Enter your Name">
+                      </div>
+                      <div class="col-sm-6 user-record-form">
+                            <label class="form-label">Designation</label>
+                        <input type="text" disabled id="cdesignation" class="form-control" placeholder="Enter your Designation">
+                      </div>
+                    </div>
+                    <div class="row user-form">
+                      <div class="col-sm-6 user-record-form">
+                     <label class="form-label">Organisation</label>
+                        <input type="text" disabled id="organisation" class="form-control" placeholder="Enter your Organisation">
+                      </div>
+                      <div class="col-sm-6 user-record-form">
+                            <label class="form-label">Mobile No.</label>
+                        <input type="text" disabled id="mobile_no" class="form-control" placeholder="Enter your Mobile No.">
+                      </div>
+                    </div>
+                    <div class="row user-form">
+                      <div class="col-sm-6 user-record-form">
+                     <label class="form-label">Email</label>
+                        <input type="text" disabled id="email" class="form-control" placeholder="Enter your Email">
+                      </div>
+                      <div class="col-sm-6 user-record-form">
+                            <label class="form-label">Address</label>
+                        <input type="text" disabled id="address" class="form-control" placeholder="Enter your Address">
+                      </div>
+                    </div>
+                    <div class="row user-form">
+                      <div class="col-sm-6 user-record-form">
+                        <label class="form-label">Country</label>
+                        <input type="text" disabled id="country" class="form-control" placeholder="Enter your Address">
+                      </div>
+                      <div class="col-sm-6 user-record-form">
+                        <label class="form-label">state</label>
+                        <input type="text" disabled id="state" class="form-control" placeholder="Enter your Address">
+                        </div>
+                    </div>
+                    <div class="row user-form">
+                      <div class="col-sm-6 user-record-form">
+                        <label class="form-label">city</label>
+                            <input type="text" disabled id="city" class="form-control" placeholder="Enter your city">
+                      </div>
+                      <div class="col-sm-6 user-record-form">
+                        <label class="form-label">Pin code</label>
+                        <input type="text" disabled id="pin_code" class="form-control" placeholder="Enter your Pin code">
+                      </div>
+                    </div>
+                    <div class="row user-form">
+                      <div class="col-sm-6 user-record-form">
+                        <label class="form-label">Landline</label>
+                        <input type="text" disabled id="landline" class="form-control" placeholder="Enter your Landline">
+                      </div>
+                      <div class="col-sm-6 user-record-form">
+                        <label class="form-label">Fax</label>
+                        <input type="text" disabled id="fax" class="form-control" placeholder="Enter your Fax">
+                      </div>
+                    </div>
+              </form>
+              </div>
+              <hr>
+                <!-- status btn container start-->
+                <div class="button-container">
+                  <button type="button" class="btn btn-primary" onclick="document.getElementById('updatestatus').style.display = 'block'">Update Status</button>                 
+                  <button type="button" class="btn btn-primary" onclick="document.getElementById('sendtoperson').style.display = 'block'">Send To</button>
+                </div>
+                <!-- status btn container end-->
+
+              <div id="updatestatus" style="display: none;">
+              <form>
+                <div class="row user-form">
+                  <div class="col-sm-6 user-record-form">
+                 <label class="form-label">Send to Date</label>
+                    <input type="date" id="send_to_date" class="form-control" placeholder="Enter your Send to Date">
+                  </div>
+                  <div class="col-sm-6 user-record-form">
+                        <label class="form-label">Received Back Date</label>
+                    <input type="date" id="received_back_office" class="form-control" placeholder="Enter your Received Back Date">
+                  </div>
+                </div>
+                <div class="row user-form">
+                  <div class="col-sm-6 user-record-form">
+                 <label class="form-label">Remark</label>
+                    <input type="text" id="remark1" class="form-control" placeholder="Enter your Remark">
+                  </div> 
+                </div>
+                <div class="container">
+                  <div class="button-container">
+                    <button type="button" onclick="Submit1()" class="btn btn-primary">Save</button>                 
+                    <button type="button" class="btn btn-primary"  onclick="document.getElementById('updatestatus').style.display = 'none'">Cancel</button>
+                  </div>
+                </div>
+                </form>
+                </div>
+  
+                <hr>
+  
+                
+              <div id="sendtoperson" style="display: none;">
+                <form>
+                  <div class="row user-form">
+                    <div class="col-sm-6 user-record-form">
+                   <label class="form-label">Send to</label>
+                   <select class="form-select" id="designationdd" style="display: none;"></select>
+                      <select class="form-select" id="divisiondd"></select>
+                    </div>
+                    <div class="col-sm-6 user-record-form">
+                          <label class="form-label">Remarks</label>
+                      <input type="text" id="remarks" class="form-control" placeholder="Enter Remarks">
+                    </div>
+                  </div>
+                  <div class="container">
+                    <div class="button-container">
+                      <button type="button" onclick="Submit2()" class="btn btn-primary">Save</button>                 
+                      <button type="button" class="btn btn-primary" onclick="document.getElementById('sendtoperson').style.display = 'none'">Cancel</button>
+                    </div>
+                  </div>
+                  </form>
+                  </div>
+    
+  
+                  <div id="list"></div>
+        
+          </div>
+  
+        
+      </div>
+      <script>
+    
+        let req = new XMLHttpRequest();
+        req.open("GET", "http://localhost:8080/ViewLetterDiaryEntry/"+sessionStorage.getItem("Id"));
+        req.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("token"));
+        req.setRequestHeader('Access-Control-Allow-Origin', "*");
+        req.send();
+        req.onload = () =>
+        {
+          console.log(req);
+          if(req.status == 200)
+          {
+            const jsonData = JSON.parse(req.response);
+            console.log(jsonData);
+                  const letterData = jsonData.letterdiary;
+                  const sendTo = letterData.cdt;
+                  const myArray = sendTo.split("T");
+                      console.log(myArray[0]+"|"+myArray[1])
+                  document.getElementById("id").value = letterData.id;
+                  document.getElementById("newletter_no").value = letterData.letter_number;
+                  document.getElementById("recievedFrom").value = letterData.received_from;
+                  document.getElementById("reference_no").value = letterData.refrence_no;
+                  document.getElementById("letter_date").value = letterData.letter_date;
+                  document.getElementById("subject").value = letterData.subject;
+                  document.getElementById("recieved_date").value = letterData.received_date;
+                  document.getElementById("send_date").value = myArray[0];
+                  document.getElementById("designation").value =  letterData.send_to_designation;
+                  document.getElementById("division").value = letterData.send_to_division;
+                  document.getElementById("dairy_date").value = letterData.diary_date;
+                  document.getElementById("formof_communicaition").value = letterData.form_of_communication;
+                  document.getElementById("language").value = letterData.language;
+                  document.getElementById("remarks").value = letterData.remarks;
+                  document.getElementById("vip-dd").value = letterData.vip;
+                  
+                  const contactData = jsonData.contactdetails;
+                  document.getElementById("name").value = contactData.name;
+                  document.getElementById("cdesignation").value = contactData.designation;
+                  document.getElementById("organisation").value = contactData.organisation;
+                  document.getElementById("mobile_no").value = contactData.mobileno;
+                  document.getElementById("email").value = contactData.email;
+                  document.getElementById("address").value = contactData.address;
+                  document.getElementById("country").value = contactData.country;
+                  document.getElementById("state").value = contactData.state;
+                  document.getElementById("city").value = contactData.city;
+                  document.getElementById("pin_code").value = contactData.pincode;
+                  document.getElementById("landline").value = contactData.landline;
+                  document.getElementById("fax").value = contactData.fax;
+      
+                  const lettermovementData = jsonData.lettermovementhistory;
+                  var text = "";
+                  for(let i =0; i<lettermovementData.length; i++)
+                  {
+                      console.log("lettermovementData.send_date :" +lettermovementData[i].send_date)
+                      if(lettermovementData[i].send_date == null)
+                      {
+                          text += "<div class='row user-form'><div class='col-sm-6 user-record-form'><label class='form-label'>Send to:</label>"
+                                +"<label class='form-label'>"+lettermovementData[i].send_to_division+"</label></div><div class='col-sm-6 user-record-form'>"
+                                +"<label class='form-label'>Remarks:</label><label class='form-label'>"+lettermovementData[i].remarks+"</label>"
+                                +"</div></div><hr>";
+                      }
+                      else
+                      {
+                          text += "<div class='row user-form'><div class='col-sm-6 user-record-form'><label class='form-label'>Send to Date:</label>"
+                              +"<label class='form-label'> "+lettermovementData[i].send_date+"</label></div><div class='col-sm-6 user-record-form'>"
+                              +"<label class='form-label'>Received Back Date:</label><label class='form-label'>"+lettermovementData[i].received_date+"</label>"
+                              +"</div></div><div class='row user-form'><div class='col-sm-6 user-record-form'><label class='form-label'>Remarks:</label>"
+                              +"<label class='form-label'>"+lettermovementData[i].remarks+"</label></div></div><hr>"
+                      }
+                      console.log("text :"+text)
+                      document.getElementById("list").innerHTML = text;
+                  }
+              }
+              else
+              {
+                  window.location = "loginpage.html"
+              }
+          }
+      
+          async function Submit1()
+        {
+          console.log("************")
+          event.preventDefault()
+          const id = document.getElementById("id").value;
+          const send_to_date = document.getElementById("send_to_date").value;
+          const received_back_office = document.getElementById("received_back_office").value;
+          const remark1 = document.getElementById("remark1").value;
+         
+          const messageReponse = document.getElementById("messageReponse");
+          // console.log(formatRecievedDate+"|"+formatFileDate+"|"+recievedDate+"|"+fileDate)
+        
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'http://localhost:8080/sendLetterMovementData', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("token"));
+          xhr.onreadystatechange = function() {
+              if(xhr.readyState === XMLHttpRequest.DONE) {
+                  if(xhr.status === 200) 
+                  {
+                      let reponse = xhr.responseText;
+                      const myArray = reponse.split("|");
+                      console.log(myArray[0]+"|"+myArray[1])
+                      if(myArray[0] == "200")
+                      {
+                        window.location = "viewLetterDiary.html";
+                        messageReponse.textContent = myArray[1];
+                        messageReponse.style.color = "green"; 
+                      }
+                      else
+                      {
+                        messageReponse.textContent = '* '+myArray[1];
+                        messageReponse.style.color = "red"; 
+                      }
+                  }
+                  else 
+                  {
+                    messageReponse.textContent = "** Something went wrong, please try after sometime";
+                      messageReponse.style.color = "red"; 
+                      console.error(xhr.responseText);
+                  }
+              }
+          };
+      
+      var data = {
+        letter_id: id,
+        send_date: send_to_date,
+        received_date: received_back_office,
+        remarks: remark1
+      };
+      
+      xhr.send(JSON.stringify(data))
+      
+        }
+      
+        async function Submit2()
+        {
+          console.log("************")
+          event.preventDefault()
+          const id = document.getElementById("id").value;
+          const send_to = document.getElementById("divisiondd").value;
+          const remarks = document.getElementById("remarks").value;
+         
+          const messageReponse = document.getElementById("messageReponse");
+          // console.log(formatRecievedDate+"|"+formatFileDate+"|"+recievedDate+"|"+fileDate)
+        
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'http://localhost:8080/sendLetterMovementData', true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("token"));
+          xhr.onreadystatechange = function() {
+              if(xhr.readyState === XMLHttpRequest.DONE) {
+                  if(xhr.status === 200) 
+                  {
+                      let reponse = xhr.responseText;
+                      const myArray = reponse.split("|");
+                      console.log(myArray[0]+"|"+myArray[1])
+                      if(myArray[0] == "200")
+                      {
+                        window.location = "viewLetterDiary.html";
+                        messageReponse.textContent = myArray[1];
+                        messageReponse.style.color = "green"; 
+                      }
+                      else
+                      {
+                        messageReponse.textContent = '* '+myArray[1];
+                        messageReponse.style.color = "red"; 
+                      }
+                  }
+                  else 
+                  {
+                      messageReponse.textContent = "** Something went wrong, please try after sometime";
+                      messageReponse.style.color = "red"; 
+                      console.error(xhr.responseText);
+                  }
+              }
+          };
+      
+      var data = {
+        letter_id: id,
+        send_to_division: send_to,
+        remarks: remarks
+      };
+      
+      xhr.send(JSON.stringify(data))
+        }
+      
+        </script>
+      
+      </body>
+      </html>
+      

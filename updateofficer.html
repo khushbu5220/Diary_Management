@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/toasty.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/toasty.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="./js/index.js"></script>
+
+
+</head>
+
+<body class="loginpage">
+
+  <include src="./header.html"></include>
+
+  <!-- Main container -->
+  <div class="page-container">
+
+    <!-- bloc-0 -->
+    <div class="bloc none full-width-bloc l-bloc " id="bloc-0">
+      <div class="container bloc-lg bloc-sm-lg">
+        <div class="row">
+          <div class="col-12 col-md-2 col-lg-2 heading">
+            <a target="_blank"><img style="height: 110px;" src="img/CSIR-Logo-With-Tagline-Seleceted-Bilingual-01.png" class="img-fluid float-lg-none" alt="CSIR Logo-With-Tagline-Seleceted-Bilingual-01" /></a>
+          </div>
+          <div class="col-12 offset-lg--1 col-lg-8 col-md-8 heading" id="heading">
+            <h5 class="text-lg-center tc-black text-md-center">
+              वैज्ञानिक तथा औद्योगिक अनुसंधान परिषद्</h5>
+              <h5 class="text-lg-center tc-black text-md-center">
+              Council of Scientific and Industrial Research</h5>
+              <h5 class="text-lg-center tc-black text-md-center" id="heading2">
+              विज्ञान और प्रौद्योगिकी मंत्रालय</h5>
+              <h5 class="text-lg-center tc-black text-md-center" id="heading2">
+              Ministry of Science and Technology, Govt. of India</h5>
+          </div>
+          <div class="col-12 col-lg-2 col-md-2 heading">
+            <a target="_blank"><img  src="img/G20%20theme%20and%20logo.png" class="img-fluid img-style float-lg-right" alt="G20%20theme%20and%20logo" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bloc-0 END -->
+    
+    <!-- Header start -->
+    <nav style="height: 35px;">
+        <div class="nav-adj"></div>
+        <ul class="navbar" id="navbar">
+        </ul>
+      </nav>
+    <!-- bloc-0 END -->
+
+
+    
+    <div class="container mt-3">
+      <div class="form-header-bg">
+        <h2 class="form-header">Update Officers</h2>
+      </div>
+    
+      <div><span id="messageReponse"></span></div>
+      <form>
+        <div class="row user-form">
+          <div class="col-sm-6 user-record-form">
+            <label class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your Name">
+          </div>
+          <div class="col-sm-6 user-record-form">
+            <label class="form-label">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter your Username">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 user-record-form">
+            <label class="form-label">Email ID</label>
+                <input type="text" id="emailid" class="form-control" placeholder="Enter your Username">
+            </select>
+          </div>
+          <div class="col-sm-6 user-record-form">
+            <label class="form-label">Designation Name</label>
+            <select class="form-select" id="recievedFrom" style="display: none;"></select>
+            <select class="form-select" id="designationdd"></select>
+          </div>
+        </div>
+        <div class="row user-form">
+          <div class="col-sm-6 user-record-form">
+            <label class="form-label">Division Name</label>
+            <select class="form-select" id="divisiondd"></select>
+          </div>
+          <div class="col-sm-6 user-record-form">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="status">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+
+
+        
+
+        
+
+
+        <div class="container">
+
+          <div class="button-container">
+            <button type="button" class="btn btn-primary" onclick="Submit()">Update</button>
+            <button type="button" class="btn btn-primary" onclick="history.go(-1)">Cancel</button>
+          </div>
+        </div>
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+
+       
+
+      </form>
+    </div>
+
+
+</body>
+
+<script>
+let req = new XMLHttpRequest();
+    req.open("GET", "http://localhost:8080/viewOfficers/"+sessionStorage.getItem("Id"));
+    req.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("token"));
+    req.setRequestHeader('Access-Control-Allow-Origin', "*");
+	  req.send();
+    req.onload = () =>
+	{
+		console.log(req);
+		if(req.status == 200)
+		{
+			const jsonData = JSON.parse(req.response);
+			console.log(jsonData);
+            document.getElementById("name").value = jsonData.displayname;
+            document.getElementById("username").value = jsonData.username;
+            document.getElementById("emailid").value = jsonData.emailId;
+    // const password = document.getElementById("password").value;
+            document.getElementById("designationdd").value = jsonData.designation;
+            document.getElementById("divisiondd").value = jsonData.division;
+            document.getElementById("status").value = jsonData.ustatus;
+        }
+        else
+        {
+            window.location = "loginpage.html"
+        }
+    }
+
+  async function Submit()
+  {
+    console.log("************")
+    event.preventDefault()
+    const name = document.getElementById("name").value;
+    const username = document.getElementById("username").value;
+    const emailid = document.getElementById("emailid").value;
+    // const password = document.getElementById("password").value;
+    const designationdd = document.getElementById("designationdd").value;
+    const divisiondd = document.getElementById("divisiondd").value;
+    const status = document.getElementById("status").value;
+    const messageReponse = document.getElementById("messageReponse");
+
+    // console.log(formatRecievedDate+"|"+formatFileDate+"|"+recievedDate+"|"+fileDate)
+  
+    var xhr = new XMLHttpRequest();
+    xhr.open('PUT', 'http://localhost:8080/updateOfficer/'+sessionStorage.getItem("Id"), true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("token"));
+    xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === XMLHttpRequest.DONE) {
+            if(xhr.status === 200) 
+            {
+                let reponse = xhr.responseText;
+                const myArray = reponse.split("|");
+                console.log(myArray[0]+"|"+myArray[1])
+                if(myArray[0] == "200")
+                {
+                  messageReponse.textContent = myArray[1];
+                  messageReponse.style.color = "green"; 
+                  window.location = "officerlist.html";
+                }
+                else
+                {
+                  messageReponse.textContent = '* '+myArray[1];
+                  messageReponse.style.color = "red"; 
+                }
+            }
+            else 
+            {
+                messageReponse.textContent = "** Something went wrong, please try after sometime";
+                messageReponse.style.color = "red"; 
+                console.error(xhr.responseText);
+            }
+        }
+    };
+
+var data = {
+    displayname: name,
+	username: username,
+	emailId: emailid,
+	division: divisiondd,
+	designation: designationdd,
+    ustatus: status
+};
+
+xhr.send(JSON.stringify(data))
+
+  }
+
+
+//   const logout = document.getElementById("logout");
+// logout.addEventListener('logout', login)
+</script>
+</html>
